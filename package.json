@@ -1,22 +1,32 @@
 {
   "name": "docs",
-  "packageManager": "yarn@3.2.2",
+  "packageManager": "yarn@4.1.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chocolatey/docs.git"
   },
   "author": "chocolatey",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/chocolatey/docs/issues"
   },
   "homepage": "https://github.com/chocolatey/docs#readme",
-  "devDependencies": {
-    "choco-theme": "git+https://github.com/chocolatey/choco-theme.git"
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "astro": "npx astro",
+    "browsers": "npx playwright install --with-deps",
+    "build": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro check && npx astro build",
+    "dependencies": "yarn install --immutable",
+    "dev": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro dev",
+    "playwright": "npx playwright test",
+    "preview": "npx astro preview",
+    "start": "yarn dev",
+    "telemetry": "npx astro telemetry disable",
+    "choco-theme": "npx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs"
   },
-  "resolutions": {
-    "glob-parent": "^6.0.2",
-    "nth-check": "^2.1.1",
-    "terser": "^5.14.2"
+  "dependencies": {
+    "choco-astro": "0.2.0",
+    "choco-theme": "0.8.2"
   }
 }
