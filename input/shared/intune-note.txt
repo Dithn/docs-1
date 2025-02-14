@@ -1,7 +1,0 @@
-> :memo: **NOTE**
->
-> The Chocolatey Intune integration shipped as part of v3.0.0 of the Chocolatey Licensed Extension.
-
-> :memo: **NOTE**
->
-> The Chocolatey Intune integration requires a valid Chocolatey for Business or Chocolatey for Business Trial license.

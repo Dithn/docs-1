@@ -1,0 +1,26 @@
+---
+order: 70
+xref: cpmr0070
+title: CPMR0070 - Package Id uses underscores (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0070
+ruleType: Note
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleNote from '@components/docs/PackageValidatorRuleNote.mdx';
+
+<PackageValidatorRuleNote />
+
+## Issue
+
+In the nuspec, the `<id>` field has been specified with an underscore (`_`) as part of the package identifier when separating words.
+
+## Recommended Solution
+
+Please update the `<id>` field in the `.nuspec` file to ensure that the package identifier does not contain an underscore, and follows our [package naming Guidelines](https://docs.chocolatey.org/en-us/create/create-packages/#naming-your-package)
+
+## Reasoning
+
+Packages on Chocolatey Community Repository should follow package guidelines and established conventions.
+One of the established conventions is to separate different words using a dash (`-`) instead of an underscore (`_`).
